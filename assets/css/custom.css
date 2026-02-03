@@ -1,0 +1,613 @@
+/**
+ * Custom WordPress Theme Styles
+ * Additional styles and overrides for WordPress-specific elements
+ * 
+ * @package My_Portfolio
+ */
+
+/* ===== WordPress Admin Bar Fixes ===== */
+body.admin-bar {
+    margin-top: 0 !important;
+}
+
+body.admin-bar #sticky-navbar {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+    body.admin-bar #sticky-navbar {
+        top: 46px;
+    }
+}
+
+/* ===== Mobile Nav Sidebar ===== */
+/* Closed by default: off-screen and overlay inert. Below navbar (z-50) so hamburger stays clickable. */
+.nav-mobile-overlay {
+    z-index: 45;
+}
+.nav-mobile-sidebar {
+    z-index: 46;
+    transform: translateX(100%);
+}
+/* First nav link starts below appbar (navbar h-16 = 4rem) */
+.nav-mobile-sidebar-inner {
+    padding-top: 5rem; /* clear 4rem appbar + small buffer */
+}
+@media (max-width: 767px) {
+    body.nav-mobile-open {
+        overflow: hidden;
+    }
+    body.nav-mobile-open .nav-mobile-overlay,
+    .nav-mobile-overlay.is-open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    body.nav-mobile-open .nav-mobile-sidebar,
+    .nav-mobile-sidebar.is-open {
+        transform: translateX(0);
+    }
+}
+
+/* ===== Scroll targets: avoid fixed navbar covering section tops ===== */
+section[id] {
+    scroll-margin-top: 5.5rem; /* navbar h-16 (4rem) + buffer */
+}
+body.admin-bar section[id] {
+    scroll-margin-top: 6.5rem;
+}
+
+/* ===== Smooth Scrolling ===== */
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+/* ===== Hero Section Animation ===== */
+/* Animations are now handled in styles.css */
+
+/* ===== WordPress Block Editor Prose Styles ===== */
+.prose {
+    color: #d1d5db;
+    max-width: none;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.prose p {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+}
+
+.prose a {
+    color: var(--color-accent, #eab308);
+    text-decoration: underline;
+}
+
+.prose a:hover {
+    color: var(--color-accent-hover, #facc15);
+}
+
+.prose ul,
+.prose ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.prose li {
+    margin-bottom: 0.5rem;
+}
+
+.prose strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.prose code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.prose pre {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+.prose img {
+    border-radius: 0.75rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.prose blockquote {
+    border-left: 4px solid var(--color-accent, #eab308);
+    padding-left: 1rem;
+    font-style: italic;
+    color: #9ca3af;
+    margin: 1rem 0;
+}
+
+/* ===== Animation Classes ===== */
+.animate-fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== WordPress Navigation Pagination ===== */
+.navigation.pagination {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.navigation.pagination .nav-links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.navigation.pagination .page-numbers {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.navigation.pagination .page-numbers:hover {
+    background: #facc15;
+    color: #000000;
+}
+
+.navigation.pagination .page-numbers.current {
+    background: #facc15;
+    color: #000000;
+}
+
+/* ===== Post Navigation ===== */
+.post-navigation a {
+    color: #facc15;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.post-navigation a:hover {
+    color: #fde047;
+}
+
+/* ===== Gallery Hover Effects Initial State ===== */
+.gallery-item .project-link {
+    transform: translateY(1rem);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* ===== Moments / Masonry Gallery: show overlay on touch (mobile) ===== */
+@media (hover: none) {
+    .masonry-item .overlay {
+        opacity: 1;
+    }
+    .masonry-item:hover {
+        transform: none;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    }
+}
+
+/* ===== Utility Classes ===== */
+.delay-700 {
+    animation-delay: 700ms;
+}
+
+.delay-1000 {
+    animation-delay: 1000ms;
+}
+
+/* ===== Loading Skeleton (Optional) ===== */
+.skeleton {
+    background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ===== Accessibility Improvements ===== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Focus visible for keyboard navigation */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #facc15;
+    outline-offset: 2px;
+}
+
+/* ===== Print Styles ===== */
+@media print {
+    #sticky-navbar,
+    .animate-pulse,
+    .absolute.top-1\/4,
+    .absolute.bottom-1\/4 {
+        display: none !important;
+    }
+}
+
+/* ===== Hero Typing Effect ===== */
+#typing-text {
+    min-width: 200px;
+    display: inline-block;
+    color: #EAB308;
+}
+
+.typing-cursor::after {
+    content: '|';
+    color: #EAB308;
+    animation: blink 1s infinite;
+    margin-left: 4px;
+    font-weight: normal;
+}
+
+/* ===== Vintage Gold Text ===== */
+.vintage-gold-text {
+    color: #EAB308;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+/* ===== Hero Section Content Visibility ===== */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.hero-content * {
+    opacity: 1 !important;
+}
+
+.hero-image {
+    position: relative;
+    z-index: 10;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* ===== Hero Layout: mobile = image first, center; desktop = content left, image right ===== */
+.hero-inner {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+}
+@media (min-width: 1024px) {
+    .hero-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4rem;
+    }
+    .hero-content {
+        text-align: left;
+    }
+    .hero-content .flex.justify-center {
+        justify-content: flex-start;
+    }
+    .hero-image {
+        justify-content: flex-end;
+    }
+}
+
+/* Mobile: image first (top), content below, all center-aligned */
+.hero-content {
+    width: 100%;
+}
+@media (max-width: 1023px) {
+    .hero-content {
+        text-align: center;
+    }
+}
+@media (min-width: 1024px) {
+    .hero-content {
+        width: auto;
+        text-align: left;
+    }
+}
+
+/* ===== Floating Tech Icons ===== */
+.floating-tech-icons {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.tech-icon {
+    position: absolute;
+    color: rgba(234, 179, 8, 0.3);
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    animation: floatTechIconSlow 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+    display: block;
+    opacity: 0.3;
+}
+
+@keyframes floatTechIconSlow {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.2;
+    }
+    25% {
+        transform: translate(15px, -15px) rotate(3deg);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-15px, 15px) rotate(-3deg);
+        opacity: 0.25;
+    }
+    75% {
+        transform: translate(10px, 10px) rotate(2deg);
+        opacity: 0.3;
+    }
+}
+
+@keyframes floatTechIcon {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.1;
+    }
+    25% {
+        transform: translate(var(--random-x, 10px), var(--random-y, -10px)) rotate(5deg);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translate(calc(var(--random-x, 10px) * -1), calc(var(--random-y, -10px) * -1)) rotate(-5deg);
+        opacity: 0.15;
+    }
+    75% {
+        transform: translate(calc(var(--random-x, 10px) * 0.5), calc(var(--random-y, -10px) * 0.5)) rotate(3deg);
+        opacity: 0.2;
+    }
+}
+
+/* ===== Tech Stack Badges ===== */
+.tech-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(234, 179, 8, 0.08);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    border-radius: 0.5rem;
+    color: #EAB308;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.tech-badge:hover {
+    background: rgba(234, 179, 8, 0.15);
+    border-color: rgba(234, 179, 8, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(234, 179, 8, 0.2);
+}
+
+/* ===== Glassmorphism Effects ===== */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(250, 204, 21, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card:hover {
+    border-color: rgba(250, 204, 21, 0.3);
+    box-shadow: 0 12px 40px rgba(250, 204, 21, 0.15);
+    transform: translateY(-4px);
+    transition: all 0.3s ease;
+}
+
+/* ===== Modern Gradient Effects ===== */
+.gradient-text {
+    background: linear-gradient(135deg, #facc15 0%, #fde047 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===== Enhanced Hover Effects ===== */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(250, 204, 21, 0.2);
+}
+
+.hover-glow {
+    transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 30px rgba(250, 204, 21, 0.4);
+}
+
+/* ===== Smooth Transitions ===== */
+.smooth-transition {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Modern Scrollbar (overrides - track black, thumb #FFC107) ===== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary, #FFC107);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-hover, #ffcd38);
+}
+
+/* ===== Vintage Gold Button ===== */
+.vintage-gold-button {
+    background-color: #EAB308;
+    color: #000000;
+}
+
+.vintage-gold-button:hover {
+    background-color: #FCD34D;
+    box-shadow: 0 10px 25px rgba(234, 179, 8, 0.4);
+}
+
+/* ===== Ghost Button ===== */
+.ghost-button {
+    border-color: #F9FAFB;
+    color: #F9FAFB;
+    background-color: transparent;
+}
+
+.ghost-button:hover {
+    background-color: #F9FAFB;
+    color: #000000;
+    border-color: #F9FAFB;
+}
+
+/* ===== Hero Image Mask ===== */
+.hero-image-container {
+    position: relative;
+    overflow: visible;
+}
+
+.hero-image-mask {
+    mask-image: radial-gradient(ellipse 80% 80% at center, black 60%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at center, black 60%, transparent 100%);
+}
+
+/* ===== Projects Section – header alignment override ===== */
+.section-projects-header {
+    text-align: left;
+}
+.section-projects-header .section-title {
+    text-align: left;
+}
+.section-projects-header .section-title::after {
+    margin-left: 0;
+    margin-right: auto;
+}
+.section-projects-header::before {
+    left: 0;
+    transform: translateX(0);
+}
+.section-projects-header:hover::before {
+    transform: scale(1.2);
+}
+
+/* ===== Scroll Indicator (nudge to scroll) ===== */
+.scroll-indicator {
+    overflow: visible;
+    z-index: 20;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.scroll-indicator.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 8px);
+}
+
+.scroll-indicator-mouse {
+    width: 24px;
+    height: 40px;
+    border: 2px solid rgba(234, 179, 8, 0.6);
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 8px;
+    animation: scrollIndicatorNudge 2.2s ease-in-out infinite;
+}
+
+.scroll-indicator-wheel {
+    width: 4px;
+    height: 8px;
+    border-radius: 2px;
+    background: rgba(234, 179, 8, 0.9);
+    box-shadow: 0 0 8px rgba(234, 179, 8, 0.4);
+    animation: scrollWheelBounce 2.2s ease-in-out infinite;
+}
+
+@keyframes scrollIndicatorNudge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+}
+
+@keyframes scrollWheelBounce {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(10px); opacity: 0.6; }
+}

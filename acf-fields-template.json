@@ -1,0 +1,454 @@
+{
+  "_readme": "Import this file via ACF → Tools → Import Field Groups",
+  "field_groups": [
+    {
+      "key": "group_hero_section",
+      "title": "Hero Section",
+      "fields": [
+        {
+          "key": "field_hero_title",
+          "label": "Hero Title",
+          "name": "hero_title",
+          "type": "text",
+          "default_value": "Aryan Lohia",
+          "placeholder": "Your Name"
+        },
+        {
+          "key": "field_hero_role",
+          "label": "Hero Role",
+          "name": "hero_role",
+          "type": "text",
+          "default_value": "Event Management & Operations Lead"
+        },
+        {
+          "key": "field_hero_subtitle",
+          "label": "Hero Subtitle",
+          "name": "hero_subtitle",
+          "type": "textarea",
+          "default_value": "The behind-the-scenes force who makes your event look effortless.",
+          "rows": 2
+        },
+        {
+          "key": "field_hero_description",
+          "label": "Hero Description",
+          "name": "hero_description",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "key": "field_hero_image",
+          "label": "Hero Image",
+          "name": "hero_image",
+          "type": "image",
+          "return_format": "array",
+          "preview_size": "medium"
+        }
+      ],
+      "location": [
+        [
+          {
+            "param": "page_type",
+            "operator": "==",
+            "value": "front_page"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "group_portfolio_projects",
+      "title": "Portfolio Projects",
+      "fields": [
+        {
+          "key": "field_portfolio_projects",
+          "label": "Portfolio Projects",
+          "name": "portfolio_projects",
+          "type": "repeater",
+          "layout": "block",
+          "button_label": "Add Project",
+          "sub_fields": [
+            {
+              "key": "field_project_title",
+              "label": "Project Title",
+              "name": "project_title",
+              "type": "text"
+            },
+            {
+              "key": "field_project_role",
+              "label": "Your Role",
+              "name": "project_role",
+              "type": "text"
+            },
+            {
+              "key": "field_project_stats",
+              "label": "Project Stats",
+              "name": "project_stats",
+              "type": "repeater",
+              "layout": "table",
+              "button_label": "Add Stat",
+              "sub_fields": [
+                {
+                  "key": "field_stat",
+                  "label": "Stat",
+                  "name": "stat",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "key": "field_project_image",
+              "label": "Project Image",
+              "name": "project_image",
+              "type": "image",
+              "return_format": "array"
+            },
+            {
+              "key": "field_project_link",
+              "label": "Project Link",
+              "name": "project_link",
+              "type": "url"
+            }
+          ]
+        }
+      ],
+      "location": [
+        [
+          {
+            "param": "page_type",
+            "operator": "==",
+            "value": "front_page"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "group_timeline_events",
+      "title": "Timeline Events",
+      "fields": [
+        {
+          "key": "field_timeline_events",
+          "label": "Timeline Events",
+          "name": "timeline_events",
+          "type": "repeater",
+          "layout": "block",
+          "button_label": "Add Event",
+          "sub_fields": [
+            {
+              "key": "field_event_title",
+              "label": "Event Title",
+              "name": "event_title",
+              "type": "text"
+            },
+            {
+              "key": "field_event_role",
+              "label": "Your Role",
+              "name": "event_role",
+              "type": "text"
+            },
+            {
+              "key": "field_event_impact",
+              "label": "Impact Description",
+              "name": "event_impact",
+              "type": "textarea",
+              "rows": 3
+            },
+            {
+              "key": "field_event_image",
+              "label": "Event Image",
+              "name": "event_image",
+              "type": "image",
+              "return_format": "array"
+            },
+            {
+              "key": "field_event_year",
+              "label": "Year",
+              "name": "event_year",
+              "type": "text",
+              "placeholder": "2023 or 2023-2024"
+            }
+          ]
+        }
+      ],
+      "location": [
+        [
+          {
+            "param": "page_type",
+            "operator": "==",
+            "value": "front_page"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "group_strengths",
+      "title": "Core Strengths",
+      "fields": [
+        {
+          "key": "field_strengths",
+          "label": "Strengths",
+          "name": "strengths",
+          "type": "repeater",
+          "layout": "block",
+          "button_label": "Add Strength",
+          "sub_fields": [
+            {
+              "key": "field_strength_number",
+              "label": "Number",
+              "name": "strength_number",
+              "type": "text",
+              "placeholder": "01, 02, etc."
+            },
+            {
+              "key": "field_strength_title",
+              "label": "Title",
+              "name": "strength_title",
+              "type": "text"
+            },
+            {
+              "key": "field_strength_description",
+              "label": "Description",
+              "name": "strength_description",
+              "type": "textarea",
+              "rows": 3
+            }
+          ]
+        }
+      ],
+      "location": [
+        [
+          {
+            "param": "page_type",
+            "operator": "==",
+            "value": "front_page"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "group_services",
+      "title": "Services",
+      "fields": [
+        {
+          "key": "field_services",
+          "label": "Services",
+          "name": "services",
+          "type": "repeater",
+          "layout": "block",
+          "button_label": "Add Service",
+          "sub_fields": [
+            {
+              "key": "field_service_title",
+              "label": "Service Title",
+              "name": "service_title",
+              "type": "text"
+            },
+            {
+              "key": "field_service_description",
+              "label": "Service Description",
+              "name": "service_description",
+              "type": "textarea",
+              "rows": 3
+            },
+            {
+              "key": "field_service_icon",
+              "label": "Icon (Emoji)",
+              "name": "service_icon",
+              "type": "text",
+              "placeholder": "📋 or 🎬",
+              "maxlength": 2
+            }
+          ]
+        }
+      ],
+      "location": [
+        [
+          {
+            "param": "page_type",
+            "operator": "==",
+            "value": "front_page"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "group_testimonials",
+      "title": "Testimonials",
+      "fields": [
+        {
+          "key": "field_testimonials",
+          "label": "Testimonials",
+          "name": "testimonials",
+          "type": "repeater",
+          "layout": "block",
+          "button_label": "Add Testimonial",
+          "sub_fields": [
+            {
+              "key": "field_testimonial_name",
+              "label": "Name",
+              "name": "testimonial_name",
+              "type": "text"
+            },
+            {
+              "key": "field_testimonial_role",
+              "label": "Role",
+              "name": "testimonial_role",
+              "type": "text"
+            },
+            {
+              "key": "field_testimonial_company",
+              "label": "Company/Organization",
+              "name": "testimonial_company",
+              "type": "text"
+            },
+            {
+              "key": "field_testimonial_quote",
+              "label": "Quote",
+              "name": "testimonial_quote",
+              "type": "textarea",
+              "rows": 4
+            }
+          ]
+        }
+      ],
+      "location": [
+        [
+          {
+            "param": "page_type",
+            "operator": "==",
+            "value": "front_page"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "group_gallery",
+      "title": "Gallery",
+      "fields": [
+        {
+          "key": "field_gallery_images",
+          "label": "Gallery Images",
+          "name": "gallery_images",
+          "type": "gallery",
+          "return_format": "array",
+          "preview_size": "medium",
+          "insert": "append",
+          "library": "all"
+        }
+      ],
+      "location": [
+        [
+          {
+            "param": "page_type",
+            "operator": "==",
+            "value": "front_page"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "group_cta_section",
+      "title": "CTA Section",
+      "fields": [
+        {
+          "key": "field_cta_headline",
+          "label": "CTA Headline",
+          "name": "cta_headline",
+          "type": "text",
+          "default_value": "Bring someone who sees your event before it exists."
+        },
+        {
+          "key": "field_cta_description",
+          "label": "CTA Description",
+          "name": "cta_description",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "field_cta_whatsapp_number",
+          "label": "WhatsApp Number",
+          "name": "cta_whatsapp_number",
+          "type": "text",
+          "placeholder": "917864955155 (with country code, no +)",
+          "default_value": "917864955155"
+        },
+        {
+          "key": "field_cta_email",
+          "label": "Email Address",
+          "name": "cta_email",
+          "type": "email",
+          "default_value": "aryanlohia2346@gmail.com"
+        },
+        {
+          "key": "field_cta_phone",
+          "label": "Phone Number",
+          "name": "cta_phone",
+          "type": "text",
+          "placeholder": "+91 786 495 5155",
+          "default_value": "+917864955155"
+        }
+      ],
+      "location": [
+        [
+          {
+            "param": "page_type",
+            "operator": "==",
+            "value": "front_page"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "group_social_media",
+      "title": "Social Media Links",
+      "fields": [
+        {
+          "key": "field_linkedin_url",
+          "label": "LinkedIn URL",
+          "name": "linkedin_url",
+          "type": "url",
+          "default_value": "https://www.linkedin.com/in/aryan-lohia",
+          "placeholder": "https://www.linkedin.com/in/your-profile"
+        },
+        {
+          "key": "field_instagram_url",
+          "label": "Instagram URL",
+          "name": "instagram_url",
+          "type": "url",
+          "default_value": "https://www.instagram.com/kaalrav/?hl=en",
+          "placeholder": "https://www.instagram.com/your-profile"
+        },
+        {
+          "key": "field_twitter_url",
+          "label": "Twitter/X URL",
+          "name": "twitter_url",
+          "type": "url",
+          "placeholder": "https://twitter.com/your-profile"
+        },
+        {
+          "key": "field_facebook_url",
+          "label": "Facebook URL",
+          "name": "facebook_url",
+          "type": "url",
+          "placeholder": "https://facebook.com/your-profile"
+        }
+      ],
+      "location": [
+        [
+          {
+            "param": "page_type",
+            "operator": "==",
+            "value": "front_page"
+          }
+        ]
+      ]
+    }
+  ],
+  "_instructions": [
+    "1. Go to WordPress Admin → Plugins → Advanced Custom Fields",
+    "2. Click on Tools in the ACF menu",
+    "3. Click Import Field Groups",
+    "4. Upload this JSON file",
+    "5. All field groups will be created automatically",
+    "6. Go to Pages → Home → Edit to see and populate the fields"
+  ]
+}
+

@@ -1,0 +1,45 @@
+/**
+ * Compiled Next.js CSS
+ * 
+ * INSTRUCTIONS:
+ * This file should contain the compiled Tailwind CSS from your Next.js build.
+ * 
+ * To extract the CSS:
+ * 1. Run `npm run build` in your Next.js project
+ * 2. Find the compiled CSS in `.next/static/css/*.css`
+ * 3. Copy ALL CSS files and concatenate them into this file
+ * 
+ * Alternative (easier):
+ * Use the CDN version of Tailwind CSS and uncomment the line in functions.php
+ * 
+ * For production, you should include the actual compiled CSS from Next.js build
+ * to ensure 100% identical styling.
+ */
+
+/* Placeholder - Replace with actual compiled CSS from Next.js build */
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@3.4.0/dist/tailwind.min.css');
+
+/* Your custom Next.js CSS variables and styles */
+:root {
+  --background: oklch(0.094 0 0);
+  --foreground: oklch(0.98 0.001 0);
+  --card: oklch(0.12 0 0);
+  --card-foreground: oklch(0.98 0.001 0);
+  --popover: oklch(0.12 0 0);
+  --popover-foreground: oklch(0.98 0.001 0);
+  --primary: oklch(0.6 0.2 270);
+  --primary-foreground: oklch(0.98 0.001 0);
+  --secondary: oklch(0.2 0 0);
+  --secondary-foreground: oklch(0.98 0.001 0);
+  --muted: oklch(0.4 0 0);
+  --muted-foreground: oklch(0.6 0 0);
+  --accent: oklch(0.6 0.2 270);
+  --accent-foreground: oklch(0.98 0.001 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.2 0 0);
+  --input: oklch(0.15 0 0);
+  --ring: oklch(0.6 0.2 270);
+  --radius: 0.625rem;
+}
+

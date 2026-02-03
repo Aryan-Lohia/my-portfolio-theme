@@ -1,0 +1,32 @@
+SCREENSHOT INSTRUCTIONS
+=======================
+
+WordPress requires a screenshot.png file (1200x900px) to display in the theme selector.
+
+To create a screenshot:
+
+1. Visit your site after theme is activated and content is populated
+2. Take a screenshot of the homepage at 1200px wide viewport
+3. Crop to 1200x900px (4:3 aspect ratio)
+4. Save as screenshot.png in the theme root directory
+5. Upload to replace this file
+
+Recommended tools:
+- Full Page Screen Capture (Chrome extension)
+- Firefox Screenshot tool
+- Photoshop / GIMP for cropping
+
+The screenshot should show:
+- Hero section (top)
+- Part of timeline/portfolio section
+- Clean, professional appearance
+- Representative of the overall design
+
+Alternatively, you can use a mockup:
+- Create a mockup in Figma/Photoshop
+- Show the homepage on a laptop/desktop display
+- Export at 1200x900px
+
+Without a screenshot.png file, WordPress will show a blank theme thumbnail
+in the Appearance → Themes section.
+

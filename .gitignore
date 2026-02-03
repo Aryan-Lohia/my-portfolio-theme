@@ -1,0 +1,35 @@
+# WordPress Theme .gitignore
+
+# WordPress core files
+wp-config.php
+.htaccess
+
+# Node modules (if you add any build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Compiled files (uncomment if you're building assets)
+# assets/css/compiled-nextjs.css
+# assets/js/main.min.js
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Log files
+*.log
+
+# Cache
+.cache/
+
